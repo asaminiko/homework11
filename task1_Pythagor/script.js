@@ -1,7 +1,13 @@
-for (let i = 1; i <= 10; i++) {
-  let table = []
-  for (let j = 1; j <= 10; j++) {
-    table[j - 1] = i * j
+function table(num) {
+  const parent = document.getElementById('tbody')
+  for (let i = 1; i <= num; i++) {
+    let tr = document.createElement('tr')
+    parent.appendChild(tr)
+    for (let j = 1; j <= num; j++) {
+      let th = document.createElement('th')
+      th.textContent = i * j
+      tr.appendChild(th)
+    }
   }
-  console.log(table)
 }
+table(10)
